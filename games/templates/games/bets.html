@@ -1,0 +1,21 @@
+{% extends 'games/base.html' %} 
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+<!-- Endroit pour insérer le texte du body -->
+
+<div>
+    <h1>Bet on games</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Set bet amounts </legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Let's bet</button>
+        </div>
+    </form>
+</div>
+{%endblock%}
