@@ -18,6 +18,7 @@ header {
   background-color: #013368;
 }
 
+
 h1,
 h2,
 h3,
@@ -53,6 +54,13 @@ ul {
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .article-title {

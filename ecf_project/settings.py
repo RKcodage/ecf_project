@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'crispy_forms',
     'crispy_bootstrap4',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
@@ -146,3 +147,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'superbetmaster@gmail.com'
 EMAIL_HOST_PASSWORD = 'kayjwpqyislglhuo'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

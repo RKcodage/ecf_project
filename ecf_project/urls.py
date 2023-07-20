@@ -21,11 +21,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from users import views as user_views
 from games import views
+from games.views import TeamAPIView, PlayerAPIView, GameAPIView, BetAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bet/', views.Bet, name='games-bets'),
-    path('detail/<int:game_id>/', views.detail, name='games-detail'),
+    path('bets/', views.bets, name='bets'),
+    path('details/<int:game_id>/', views.details, name='games-details'),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
@@ -34,6 +35,15 @@ urlpatterns = [
     path('password-reset-done/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
+    path('api/teams/', views.TeamAPIView.as_view(), name='team-list'),  # Liste des équipes
+    path('api/teams/<int:game_id>/', views.TeamAPIView.as_view(), name='team-detail'),  # Détail d'une équipe par ID
+    path('api/games/', views.GameAPIView.as_view(), name='game-list'),  # Liste des jeux
+    path('api/games/<int:game_id>/', views.GameAPIView.as_view(), name='game-detail'),  # Détail d'un jeu par ID
+    path('api/players/', views.PlayerAPIView.as_view(), name='player-list'),  # Liste des joueurs
+    path('api/players/<int:game_id>/', views.PlayerAPIView.as_view(), name='player-detail'),  # Détail d'un joueur par ID
+    path('api/bets/', views.BetAPIView.as_view(), name='bet-list'),  # Liste des paris
+    path('api/bets/<int:game_id>/', views.BetAPIView.as_view(), name='bet-detail'),  # Détail d'un pari par ID
+    path('roster/', views.roster, name='roster'),
     path('', include('games.urls')),
 
 ]
