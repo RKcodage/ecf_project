@@ -38,7 +38,7 @@ User Registration and Activation:
 To register as a user, click on the "Register" link at the top-right corner of the page. Fill in the required information, and an activation email will be sent to your registered email address. Click the activation link to activate your account and start placing bets.
 
 Profile page:
-Once you're logged, you can access to your Profile to see your personal informations. You have the possibility to updating them by clicking the update button at the bottom. 
+Once you're logged, you can access to your Profile to see your personal informations. You have the possibility to updating them by clicking the update button at the bottom. Just below you can show your bets history. 
 
 
 
